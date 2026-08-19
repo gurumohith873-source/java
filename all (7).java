@@ -1,32 +1,22 @@
 import java.util.Scanner;
 
-public class ATM
+public class NumberTriangle
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
 
-        double balance = 10000;
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        System.out.println("Current Balance: ₹" + balance);
-
-        System.out.print("Enter withdrawal amount: ");
-        double amount = sc.nextDouble();
-
-        if (amount <= 0)
+        for (int i = 1; i <= rows; i++)
         {
-            System.out.println("Invalid withdrawal amount");
-        }
-        else if (amount > balance)
-        {
-            System.out.println("Insufficient balance");
-        }
-        else
-        {
-            balance = balance - amount;
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(j);
+            }
 
-            System.out.println("Withdrawal successful");
-            System.out.println("Remaining balance: ₹" + balance);
+            System.out.println();
         }
 
         sc.close();

@@ -1,20 +1,24 @@
-public class SwapNumbers
+import java.util.Scanner;
+
+public class RepeatedNumberTriangle
 {
     public static void main(String[] args)
     {
-        int a = 10;
-        int b = 20;
+        Scanner sc = new Scanner(System.in);
 
-        System.out.println("Before Swapping");
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        int temp = a;
-        a = b;
-        b = temp;
+        for (int i = 1; i <= rows; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(i);
+            }
 
-        System.out.println("\nAfter Swapping");
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
+            System.out.println();
+        }
+
+        sc.close();
     }
 }

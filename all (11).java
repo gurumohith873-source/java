@@ -1,34 +1,29 @@
 import java.util.Scanner;
 
-public class LoginSystem
+public class NumberPyramid
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
 
-        String correctUsername = "admin";
-        String correctPassword = "1234";
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        System.out.print("Enter username: ");
-        String username = sc.nextLine();
-
-        System.out.print("Enter password: ");
-        String password = sc.nextLine();
-
-        if (username.equals(correctUsername))
+        for (int i = 1; i <= rows; i++)
         {
-            if (password.equals(correctPassword))
+            // Spaces
+            for (int j = 1; j <= rows - i; j++)
             {
-                System.out.println("Login Successful");
+                System.out.print(" ");
             }
-            else
+
+            // Numbers
+            for (int j = 1; j <= (2 * i - 1); j++)
             {
-                System.out.println("Incorrect Password");
+                System.out.print(j);
             }
-        }
-        else
-        {
-            System.out.println("Invalid Username");
+
+            System.out.println();
         }
 
         sc.close();

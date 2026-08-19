@@ -1,29 +1,50 @@
-public class StudentMarks
+import java.util.Scanner;
+
+public class DiamondPattern
 {
     public static void main(String[] args)
     {
-        int java = 80;
-        int python = 75;
-        int dbms = 85;
-        int html = 90;
-        int maths = 70;
+        Scanner sc = new Scanner(System.in);
 
-        int total = java + python + dbms + html + maths;
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        double average = total / 5.0;
+        // Upper half
+        for (int i = 1; i <= rows; i++)
+        {
+            // Spaces
+            for (int j = 1; j <= rows - i; j++)
+            {
+                System.out.print(" ");
+            }
 
-        double percentage = (total / 500.0) * 100;
+            // Stars
+            for (int j = 1; j <= (2 * i - 1); j++)
+            {
+                System.out.print("*");
+            }
 
-        System.out.println("Java       : " + java);
-        System.out.println("Python     : " + python);
-        System.out.println("DBMS       : " + dbms);
-        System.out.println("HTML       : " + html);
-        System.out.println("Maths      : " + maths);
+            System.out.println();
+        }
 
-        System.out.println("----------------------");
+        // Lower half
+        for (int i = rows - 1; i >= 1; i--)
+        {
+            // Spaces
+            for (int j = 1; j <= rows - i; j++)
+            {
+                System.out.print(" ");
+            }
 
-        System.out.println("Total      : " + total);
-        System.out.println("Average    : " + average);
-        System.out.println("Percentage : " + percentage + "%");
+            // Stars
+            for (int j = 1; j <= (2 * i - 1); j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
     }
 }

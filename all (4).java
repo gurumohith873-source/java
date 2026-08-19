@@ -1,20 +1,31 @@
-public class ArithmeticOperations
+import java.util.Scanner;
+
+public class RightAlignedTriangle
 {
     public static void main(String[] args)
     {
-        int a = 20;
-        int b = 5;
+        Scanner sc = new Scanner(System.in);
 
-        int sum = a + b;
-        int difference = a - b;
-        int product = a * b;
-        int quotient = a / b;
-        int remainder = a % b;
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        System.out.println("Sum        : " + sum);
-        System.out.println("Difference : " + difference);
-        System.out.println("Product    : " + product);
-        System.out.println("Quotient   : " + quotient);
-        System.out.println("Remainder  : " + remainder);
+        for (int i = 1; i <= rows; i++)
+        {
+            // Print spaces
+            for (int j = 1; j <= rows - i; j++)
+            {
+                System.out.print(" ");
+            }
+
+            // Print stars
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
     }
 }

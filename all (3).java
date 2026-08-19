@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
-public class EvenOdd
+public class InvertedStarTriangle
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter number: ");
-        int num = sc.nextInt();
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        if (num % 2 == 0)
+        for (int i = rows; i >= 1; i--)
         {
-            System.out.println("Even number");
-        }
-        else
-        {
-            System.out.println("Odd number");
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
         }
 
         sc.close();

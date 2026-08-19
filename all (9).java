@@ -1,12 +1,27 @@
-public class Temperature
+import java.util.Scanner;
+
+public class FloydTriangle
 {
     public static void main(String[] args)
     {
-        double celsius = 25;
+        Scanner sc = new Scanner(System.in);
 
-        double fahrenheit = (celsius * 9 / 5) + 32;
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        System.out.println("Celsius    : " + celsius);
-        System.out.println("Fahrenheit : " + fahrenheit);
+        int number = 1;
+
+        for (int i = 1; i <= rows; i++)
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                System.out.print(number + " ");
+                number++;
+            }
+
+            System.out.println();
+        }
+
+        sc.close();
     }
 }

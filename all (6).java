@@ -1,37 +1,28 @@
 import java.util.Scanner;
 
-public class StudentGrade
+public class InvertedPyramid
 {
     public static void main(String[] args)
     {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter mark: ");
-        int mark = sc.nextInt();
+        System.out.print("Enter rows: ");
+        int rows = sc.nextInt();
 
-        if (mark < 0 || mark > 100)
+        for (int i = rows; i >= 1; i--)
         {
-            System.out.println("Invalid mark");
-        }
-        else if (mark >= 90)
-        {
-            System.out.println("Grade: A");
-        }
-        else if (mark >= 80)
-        {
-            System.out.println("Grade: B");
-        }
-        else if (mark >= 70)
-        {
-            System.out.println("Grade: C");
-        }
-        else if (mark >= 60)
-        {
-            System.out.println("Grade: D");
-        }
-        else
-        {
-            System.out.println("Grade: F");
+            for (int j = 1; j <= rows - i; j++)
+            {
+                System.out.print(" ");
+            }
+
+
+            for (int j = 1; j <= (2 * i - 1); j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
         }
 
         sc.close();
